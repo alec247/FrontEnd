@@ -11,12 +11,6 @@ class Butt extends React.Component {
     }
 
     render() {
-        // let buttURL = fetch("localhost:3000/butts/")
-        //     .then(response => {
-        //         console.log("Butt Photo: ", response);
-        //         this.state.buttPhoto = response;
-        //     });
-
         return(
             <div>
                 <h1>
@@ -25,7 +19,7 @@ class Butt extends React.Component {
                 <p>
                     { this.state.bootyhole }
                 </p>
-                <img src={"localhost:3000/butts/"}  alt={"bootyhole"}/>
+                <img src={ "http://localhost:8000/butts/preview.jpg" }  alt={"bootyhole"} height={180} width={320}/>
             </div>
         );
     }
