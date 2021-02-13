@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import MainPage from './components/MainPage.js';
 import 'bootstrap/dist/css/bootstrap.min.css';

@@ -3,6 +3,9 @@ import Logo from "../Images/logo.jpg" ;
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import Table from 'react-bootstrap/Table';
+import axios from 'axios';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Searchbar from './Searchbar.js'
 
 class MainPage extends React.Component {
 
@@ -11,6 +14,7 @@ class MainPage extends React.Component {
         this.state = { subheading: this.props.subheading }
     }
 
+    
     render() {
         return(
             <div>
@@ -18,17 +22,8 @@ class MainPage extends React.Component {
                 <p>
                     { this.state.subheading }
                 </p>
-                <div style={{ width: 225 }}>
-                    <InputGroup size="sm" className="mb-3">
-                        <InputGroup.Prepend>
-                            <InputGroup.Text id="inputGroup-sizing-sm">
-                                
-                            </InputGroup.Text>
-                        </InputGroup.Prepend>
-                        <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search for a Stonk or Ticker"/>
-                    </InputGroup>
-                </div>
-                <div style={{ width: 200, position: "fixed", left: "25%" }}>
+                <Searchbar></Searchbar>
+                <div style={{ width: 200, position: "absolute", left: "30%", margin: "5%" }}>
                     <Table striped bordered hover variant="dark">
                         <thead>
                             <tr>
