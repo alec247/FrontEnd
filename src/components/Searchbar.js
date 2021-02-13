@@ -12,17 +12,17 @@ class Searchbar extends React.Component {
     }
 
     autocomplete(event) {
-        var suggestions = document.getElementById('suggestions') 
-        
+        var suggestions = document.getElementById('suggestions');
+
         while (suggestions.children.length >= 1){
             suggestions.removeChild(suggestions.children[0]);
         }
     //ADD SOME TIME SHIT HERE INSTEAD VVV
         if (event.target.value.length >= 3) {
-            console.log(event.target.value)
+            console.log(event.target.value);
             axios({
                 method: 'get',
-                url: 'http://localhost:8000/stonkiepoos/' + event.target.value,
+                url: 'http://localhost:8000/stonkiepoos/search/' + event.target.value,
                 responseType:  'json',
             })
                 .then(response =>{
@@ -36,7 +36,7 @@ class Searchbar extends React.Component {
                             suggestions.appendChild(item);
                     }
                 })}
-    }   
+    }
 
     render(){
         return(
@@ -44,7 +44,7 @@ class Searchbar extends React.Component {
                 <InputGroup size="sm" className="mb-3" onChange={this.autocomplete}>
                     <InputGroup.Prepend>
                         <InputGroup.Text id="inputGroup-sizing-sm">
-                            
+
                         </InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search for a Stonk or Ticker"/>
