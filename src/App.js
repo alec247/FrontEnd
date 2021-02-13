@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Butt from './components\\Butt.js';
+import MainPage from './components/MainPage.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <Butt bootyhole="Tight little anus"></Butt>
+      <img logo></img>
+      <MainPage subheading="This is our subheading hello look at stonks"></MainPage>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Butt extends React.Component {
+class StonkPage extends React.Component {
 
     constructor(props){
         super(props);
@@ -11,7 +11,7 @@ class Butt extends React.Component {
         return(
             <div>
                 <h1>
-                    Butt
+                    StonkName
                 </h1>
                 <p>
                     { this.state.bootyhole }
@@ -20,5 +20,4 @@ class Butt extends React.Component {
         );
     }
 }
-
-export default Butt;
+export default StonkPage;
