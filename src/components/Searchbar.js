@@ -3,16 +3,20 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
+import Link from "react-router-dom";
 
 class Searchbar extends React.Component {
 
     constructor(props){
         super(props);
-        this.autocomplete = this.autocomplete.bind(this)
+        this.autocomplete = this.autocomplete.bind(this);
+        this.state = { searchbarWords: "" }
     }
 
     autocomplete(event) {
         var suggestions = document.getElementById('suggestions');
+        this.state.searchbarWords = event.target.value;
 
         while (suggestions.children.length >= 1){
             suggestions.removeChild(suggestions.children[0]);
@@ -39,6 +43,7 @@ class Searchbar extends React.Component {
     }
 
     render(){
+        var path = { "to":"/StonkPage/" + this.state.searchbarWords }
         return(
             <div style={{ width: 225, position: "absolute", margin: "5%" } }>
                 <InputGroup size="sm" className="mb-3" onChange={this.autocomplete}>
@@ -48,6 +53,11 @@ class Searchbar extends React.Component {
                         </InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search for a Stonk or Ticker"/>
+                    <InputGroup.Append>
+                        <Button variant="outline-secondary">
+                            <Link {...path}>Search</Link>
+                        </Button>
+                    </InputGroup.Append>
                 </InputGroup>
                 <ListGroup id="suggestions">
 

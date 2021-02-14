@@ -5,6 +5,15 @@ import FormControl from 'react-bootstrap/FormControl';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Searchbar from './Searchbar.js'
+import CanvasJSReact from './canvasjs.react';
+import StonkChart from './StonkChart.js';
+import BBChart from './BBChart.js';
+
+
+
+//var CanvasJSReact = require('./canvasjs.react');
+var CanvasJS = CanvasJSReact.CanvasJS;
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class StonkPage extends React.Component {
 
@@ -17,7 +26,7 @@ class StonkPage extends React.Component {
             <div>
                 <img src={Logo} alt="A logo that looks like the pornhub logo, but says StonkHub"></img>
                 <h1>
-                    { StonkName } {StonkTicker}
+                    { StonkName } {stonkTicker}
                 </h1>
                 <Searchbar></Searchbar>
                 <p>
@@ -25,8 +34,9 @@ class StonkPage extends React.Component {
                     Volume: { StonkVolume }
                     Market Cap: { StonkCap }
                 </p>
+                <StonkChart StonkTicker=""></StonkChart>
             </div>
-        );
+        )
     }
 }
 
